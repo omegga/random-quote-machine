@@ -32,6 +32,10 @@ app.get("/api/quotes", async (req, res, next) => {
   }
 });
 
+app.use((req, res, next) => {
+  res.status(404).send("Page Not Found");
+});
+
 app.listen(PORT, () => {
   console.log('server listening on port ' + PORT);
 });
