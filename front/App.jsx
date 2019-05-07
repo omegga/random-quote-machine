@@ -25,7 +25,8 @@ class App extends React.Component {
     });
   }
 
-  selectQuote() {
+  selectQuote(e) {
+    e.preventDefault();
     this.setState({ selectedQuote: getRandomQuote(this.state.quotes) });
   }
 
@@ -34,14 +35,25 @@ class App extends React.Component {
       return <p>Waiting for quotes...</p>;
     }
     if (this.state.loadingError) {
-      return <p>An error occured. Try to reload the page</p>;
+      return <p>An error occured. Try to reload the page.</p>;
     }
     const { quote, author } = this.state.selectedQuote;
+    const tweetLink = `https://twitter.com/intent/tweet?text=${quote} ~ ${author}`;
     return (
-      <section>
-        <p>{ quote }</p>
-        <p>{ author }</p>
-        <button onClick={this.selectQuote}>Get Another Quote</button>
+      <section id="quote-box">
+        <p id="text">{ quote }</p>
+        <p id="author">{ author }</p>
+        <div>
+          <a 
+            id="tweet-quote"
+            className="twitter-share-button"
+            href={tweetLink}
+            data-size="large"
+          >
+            Tweet
+          </a>
+        </div>
+        <a id="new-quote" href="#" onClick={this.selectQuote}>Get Another Quote</a>
       </section>
     );
   }

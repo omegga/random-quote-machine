@@ -1,0 +1,30 @@
+body {
+  color: slategray;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+h1,
+#quote-box {
+  margin: 50px auto;
+  width: 960px;
+}
+
+#tweet-quote,
+#new-quote {
+  background-color: #1b95e0;
+  border-radius: 3px;
+  color: white;
+  display: inline-block;
+  margin: 5px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+#text {
+  font-size: 22px;
+}
+
+#author {
+  font-style: italic;
+}
