@@ -38,6 +38,9 @@ class App extends React.Component {
       return <p>An error occured. Try to reload the page.</p>;
     }
     const { quote, author } = this.state.selectedQuote;
+    if (!quote || !author) {
+      return <p>An error occured. Try to reload the page.</p>;
+    }
     const tweetLink = `https://twitter.com/intent/tweet?text=${quote} ~ ${author}`;
     return (
       <section id="quote-box">
