@@ -3,7 +3,7 @@ const webpack = require("webpack");
 
 module.exports = {
   entry: "./front/index.js",
-  mode: "development",
+  mode: "production",
   output: {
     path: path.join(__dirname, "dist"),
     filename: "bundle.js"
