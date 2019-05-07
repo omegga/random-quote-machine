@@ -1,4 +1,5 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
+import App from './App';
 
-ReactDOM.render(<p>Random Quote Machine</p>, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));

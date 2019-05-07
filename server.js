@@ -17,9 +17,14 @@ app.use((req, res, next) => {
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "dist")));
 
+let quotesCache = null;
 app.get("/api/quotes", async (req, res, next) => {
+  if (quotesCache !== null) {
+    return res.json(quotesCache);
+  }
   try {
     const quotes = await getQuotes(TWITTER_QUOTES_ACCOUNT);
+    quotesCache = quotes;
     res.json(quotes);
   } catch (e) {
     console.error(e);

@@ -20,7 +20,7 @@ function getQuotes(screenName) {
     t.get('https://api.twitter.com/1.1/statuses/user_timeline.json', 
       { 
         screen_name: screenName, 
-        count: 100, 
+        count: 1000, 
         include_rts: false 
       }, 
       (err, tweets, response) => {
